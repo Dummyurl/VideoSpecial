@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_e9e7e7"
+    android:layout_height="match_parent"
+    tools:context=".video_module.play.SettingAboutActivity">
+    <RelativeLayout android:layout_width="match_parent"
+        android:background="@color/color_whit"
+        android:layout_height="50dp">
+        <ImageView android:layout_width="50dp"
+            android:padding="10dp"
+            android:id="@+id/iv_back"
+            android:src="@mipmap/joke_back"
+            android:layout_height="50dp"/>
+        <TextView android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="关于"
+            android:textSize="18sp"
+            android:textColor="@color/color_black"
+            android:layout_height="match_parent"/>
+        <View android:layout_height="0.5dp"
+            android:background="@color/color_b1b1b1"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"/>
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/lv_list"
+        android:divider="@null"
+        android:background="@color/color_whit"
+        android:dividerHeight="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+</LinearLayout>

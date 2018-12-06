@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/titilebar"
+    android:background="@color/color_252525"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titlebar">
+    <ImageView
+        android:id="@+id/image_big"
+        android:padding="4dp"
+        android:layout_alignParentRight="true"
+        android:visibility="visible"
+        android:src="@mipmap/icon_more_big"
+        android:layout_width="@dimen/dimens_40"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/imagemore"
+        android:padding="4dp"
+        android:visibility="visible"
+        android:layout_toLeftOf="@+id/image_big"
+        android:src="@mipmap/ic_shuffle_white"
+        android:layout_width="@dimen/dimens_40"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/loadimage"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:layout_toLeftOf="@+id/imagemore"
+        android:layout_marginRight="4dp"
+        android:src="@mipmap/ic_install_dark"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/dimens_40"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/imagecrop"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:layout_toLeftOf="@+id/loadimage"
+        android:src="@mipmap/abc_ic_menu_cut_mtrl_alpha"
+        android:layout_width="@dimen/dimens_40"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_centerVertical="true"
+        android:background="@drawable/shap_menu_con"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_height="32dp">
+        <TextView
+            android:id="@+id/tv_matrix"
+            android:text="matrix"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shap_matrix_bg"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_whit"
+            android:layout_width="65dp"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>

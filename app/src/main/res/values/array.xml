@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="movie_array">
+        <item>Top250</item>
+        <item>正在上映</item>
+        <item>即将上映</item>
+    </array>
+    <array name="setting">
+        <item>电影推荐</item>
+        <item>Matrix图库</item>
+        <item>透明壁纸</item>
+        <item>密码安全</item>
+        <item>问题反馈</item>
+        <item>版本升级</item>
+        <item>版本号</item>
+    </array>
+    <array name="aboutus">
+        <item>简介</item>
+        <item>用户协议</item>
+        <item>问题反馈</item>
+        <item>版本升级</item>
+        <item>版本号</item>
+    </array>
+    <string-array name="spinners">
+        <item>1920x1080</item>
+        <item>1280x720</item>
+        <item>720x480</item>
+        <item>352x288</item>
+        <item>手机最高</item>
+    </string-array>
+    <string-array name="title">
+        <item>推荐</item>
+        <item>视频</item>
+        <!--
+                <item>美文</item>
+        -->
+        <item>图片</item>
+        <item>搞笑</item>
+        <item>essay</item>
+    </string-array>
+    <string-array name="name">
+        <item>(り红装一世</item>
+        <item>若离，必弃。</item>
+        <item>℡英雄人物</item>
+        <item>海豚湾的承诺＿相守一世</item>
+        <item>学霸配学渣天生一对@</item>
+        <item>重复着去体验</item>
+        <item>一日不见，如隔三秋。</item>
+        <item>我会发光~~</item>
+        <item>向日葵里盛开的夏天</item>
+    </string-array>
+    <string-array name="tools_name">
+        <item>图片处理</item>
+        <item>摄像</item>
+        <item>手机弹幕</item>
+        <item>二维码生成</item>
+        <item>BT电影</item>
+        <item>今日天气</item>
+        <item>备忘录</item>
+    </string-array>
+
+    <string-array name="about_us_list">
+        <item>私人客服</item>
+        <item>密码安全</item>
+        <item>项目简介</item>
+        <item>用户协议</item>
+        <item>问题反馈</item>
+        <item>版本升级</item>
+<!--
+        <item>版本号</item>
+-->
+    </string-array>
+
+    <string-array name="tool_life">
+        <item>历史今日</item>
+        <item>新华字典</item>
+        <item>电话查询</item>
+    </string-array>
+
+    <array name="setting_adout">
+        <item>二维码分享</item>
+        <item>商城下载</item>
+    </array>
+</resources>

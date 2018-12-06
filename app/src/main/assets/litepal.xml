@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value="matrix" ></dbname>
+    <version value="4" ></version>
+    <list>
+        <mapping class="com.matrix.yukun.matrix.video_module.entity.CollectsInfo"></mapping>
+        <mapping class="com.matrix.yukun.matrix.calarder_module.contant.CalandarBean"></mapping>
+        <mapping class="com.matrix.yukun.matrix.barrage_module.BarrageHistory"></mapping>
+    </list>
+</litepal>
