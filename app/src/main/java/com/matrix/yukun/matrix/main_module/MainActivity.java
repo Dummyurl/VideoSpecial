@@ -122,7 +122,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private LinearLayout llCamera;
     private LinearLayout llPhoto;
     private LinearLayout mLlContain;
-    private TextView mTvRotate;
     private VerticalSeekBar mVerticalSeekBar;
     private ImageView mIvRotate;
     private ImageView mIvMorebig;
@@ -162,7 +161,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         reaContain = (RelativeLayout) findViewById(R.id.contain);
         layoutContain=(MyRelativeLayout)findViewById(R.id.my_relat);
         mLlContain = findViewById(R.id.ll_rotato);
-        mTvRotate = findViewById(R.id.tv_rotate);
         mIvRotate = findViewById(R.id.iv_rotate);
         mIvMorebig = findViewById(R.id.image_big);
         mVerticalSeekBar = findViewById(R.id.vertical_seek);
@@ -234,7 +232,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         public processImageTask(IImageFilter imageFilter,Bitmap images) {
             this.filter = imageFilter;
             this.images=images;
-
         }
 
         @Override
@@ -307,8 +304,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         if(path==null||path.length()==0){
             return;
         }
-        imageViewCrop.setVisibility(View.GONE);
-        textViewTiShi.setVisibility(View.GONE);
+        imageViewCrop.setVisibility(View.VISIBLE);
+        mIvRotate.setVisibility(View.VISIBLE);
+        imageLoad.setVisibility(View.VISIBLE);
         layout.setVisibility(View.VISIBLE);
         imageViewMore.setVisibility(View.VISIBLE);
         detailImage();
@@ -386,7 +384,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         imageViewTest.setImageBitmap(bitmap);
         mBitCompress= BitmapUtil.mTempBit(bitmap);
         mBitSeek=bitmap;//进度的Bitmap
-        mTvRotate.setText(90+roate%4*90+"°");
+//        mTvRotate.setText(90+roate%4*90+"°");
     }
 
     private void setListener() {
@@ -485,15 +483,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
                 //变大的contain
             case R.id.image_big:
-                if(mPopupWindow!=null&&mPopupWindow.isShowing()){
-                    mPopupWindow.dismiss();
-                    isShow=!isShow;
-                }
-                if(mLlContain.getVisibility()==View.VISIBLE){
-                    mLlContain.setVisibility(View.GONE);
-                }else {
-                    mLlContain.setVisibility(View.VISIBLE);
-                }
+//                if(mPopupWindow!=null&&mPopupWindow.isShowing()){
+//                    mPopupWindow.dismiss();
+//                    isShow=!isShow;
+//                }
+//                if(mLlContain.getVisibility()==View.VISIBLE){
+//                    mLlContain.setVisibility(View.GONE);
+//                }else {
+//                    mLlContain.setVisibility(View.VISIBLE);
+//                }
                 break;
             case R.id.iv_rotate:
                 handleColorRoate(roate);

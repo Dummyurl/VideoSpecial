@@ -26,12 +26,12 @@
                 android:layout_marginLeft="8dp"
                 android:textSize="16dp"
                 android:layout_height="wrap_content" />
-            <ImageView
+            <!--<ImageView
                 android:id="@+id/iv_rotate"
                 android:src="@mipmap/ic_refresh_dark"
                 android:layout_width="@dimen/dimens_40"
                 android:padding="8dp"
-                android:layout_height="@dimen/dimens_40" />
+                android:layout_height="@dimen/dimens_40" />-->
 
         </LinearLayout>
         <View
