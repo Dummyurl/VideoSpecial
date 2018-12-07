@@ -383,7 +383,7 @@ public class MyRelativeLayout extends RelativeLayout {
                                 textView.setY(mEvent.getY() - mTv_height);
                                 //通知调用者我在平移
                                 if (myRelativeTouchCallBack != null)
-                                    myRelativeTouchCallBack.onTextViewMoving(textView);
+                                    myRelativeTouchCallBack.onmTvMovieing(textView);
                             }
 
                             if (spacing(firstX, firstY, event.getX(), event.getY()) > 2) {
@@ -418,13 +418,13 @@ public class MyRelativeLayout extends RelativeLayout {
                                 }
                                 //通知调用者我在旋转或者缩放
                                 if (myRelativeTouchCallBack != null)
-                                    myRelativeTouchCallBack.onTextViewMoving(textView);
+                                    myRelativeTouchCallBack.onmTvMovieing(textView);
                             }
                             break;
                         case MotionEvent.ACTION_UP:
                             //通知调用者我滑动结束了
                             if (myRelativeTouchCallBack != null)
-                                myRelativeTouchCallBack.onTextViewMovingDone();
+                                myRelativeTouchCallBack.onmTvMovieingDone();
                             mptrID1 = INVALID_POINTER_ID;
                             updateTextViewParams((TextView) v, mAngle, scale);
 
@@ -907,9 +907,9 @@ public class MyRelativeLayout extends RelativeLayout {
     public interface MyRelativeTouchCallBack {
         void touchMoveCallBack(int direction);
 
-        void onTextViewMoving(TextView textView);
+        void onmTvMovieing(TextView textView);
 
-        void onTextViewMovingDone();
+        void onmTvMovieingDone();
     }
 
 }

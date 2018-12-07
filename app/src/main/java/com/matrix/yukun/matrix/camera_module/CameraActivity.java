@@ -32,7 +32,7 @@ import java.util.Date;
 public class CameraActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView imageViewCamera;
-    private ImageView imageViewBack;
+    private ImageView mIvBack;
     private ImageView imageViewOk;
     private ImageView imageViewCancler;
     private String fileName="";
@@ -56,7 +56,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
 
     private void init() {
         imageViewCamera = (ImageView) findViewById(R.id.cameraimageview);
-        imageViewBack = (ImageView) findViewById(R.id.cameraback);
+        mIvBack = (ImageView) findViewById(R.id.cameraback);
         imageViewOk = (ImageView) findViewById(R.id.cameraok);
         imageViewCancler = (ImageView) findViewById(R.id.cameracancler);
         layout = (RelativeLayout) findViewById(R.id.deal);
@@ -80,7 +80,7 @@ public class CameraActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void setListener() {
-        imageViewBack.setOnClickListener(this);
+        mIvBack.setOnClickListener(this);
         imageViewOk.setOnClickListener(this);
         imageViewCancler.setOnClickListener(this);
     }

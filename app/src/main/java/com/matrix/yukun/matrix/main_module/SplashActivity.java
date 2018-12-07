@@ -72,10 +72,6 @@ public class SplashActivity extends BaseActivity/* implements SplashADListener *
                 Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
             permissingList.add(Manifest.permission.READ_CONTACTS);
         }
-        if (ContextCompat.checkSelfPermission(SplashActivity.this,
-                Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
-            permissingList.add(Manifest.permission.WRITE_CONTACTS);
-        }
         if(permissingList.size()>0){
             String[] permissings=permissingList.toArray(new String[permissingList.size()]);
             ActivityCompat.requestPermissions(SplashActivity.this,permissings,1);
@@ -105,7 +101,8 @@ public class SplashActivity extends BaseActivity/* implements SplashADListener *
                                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-                                            finish();
+//                                            finish();
+                                            requestAds();
                                         }
                                     }).create();
                             dialog.show();

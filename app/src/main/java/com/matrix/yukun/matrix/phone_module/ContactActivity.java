@@ -1,10 +1,16 @@
 package com.matrix.yukun.matrix.phone_module;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.Contacts;
 import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.matrix.yukun.matrix.R;
+import com.matrix.yukun.matrix.main_module.MainActivity;
 import com.matrix.yukun.matrix.main_module.filters.Image;
 import com.matrix.yukun.matrix.video_module.BaseActivity;
 import com.matrix.yukun.matrix.video_module.entity.SortModel;
@@ -57,9 +64,7 @@ public class ContactActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     public void initDate() {
-        mPhoneNumberBeans = queryContactPhoneNumber();
-        mPhoneBeans.addAll(getSortModule());
-        mRvContactAdapter.notifyDataSetChanged();
+        getPermission();
     }
 
     @Override
@@ -76,6 +81,51 @@ public class ContactActivity extends BaseActivity implements View.OnClickListene
             }
         });
     }
+
+    private void getPermission() {
+        if (ContextCompat.checkSelfPermission(ContactActivity.this,
+                Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(ContactActivity.this, new String[]{Manifest.permission.READ_CONTACTS}, 1);
+        }else{
+            mPhoneNumberBeans = queryContactPhoneNumber();
+            mPhoneBeans.addAll(getSortModule());
+            mRvContactAdapter.notifyDataSetChanged();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //6.0权限访问
+                    mPhoneNumberBeans = queryContactPhoneNumber();
+                    mPhoneBeans.addAll(getSortModule());
+                    mRvContactAdapter.notifyDataSetChanged();
+                } else { //权限被拒绝
+                    AlertDialog dialog = new AlertDialog.Builder(this)
+                            .setMessage("需要赋予访问存储的权限，不开启将无法正常工作！且可能被强制退出登录")
+                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            })
+                            .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            }).create();
+                    dialog.show();
+                }
+                return;
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
 
     @Override
     public void onSelectStr(int index, String selectStr) {
