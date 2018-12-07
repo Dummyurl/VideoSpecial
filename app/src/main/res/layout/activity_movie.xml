@@ -17,7 +17,6 @@
             <LinearLayout
                 android:onClick="MovieBack"
                 android:background="?android:attr/actionBarItemBackground"
-                android:id="@+id/academy_back"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
                 <ImageView

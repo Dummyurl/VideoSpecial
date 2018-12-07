@@ -28,7 +28,6 @@
             android:layout_height="match_parent"
         />
         <View
-            android:id="@+id/iv_person"
             android:layout_alignParentBottom="true"
             android:background="@color/color_eaeaea"
             android:layout_width="match_parent"
@@ -48,7 +47,6 @@
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <LinearLayout
-        android:id="@+id/inputBar"
         android:layout_alignParentBottom="true"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
@@ -75,7 +73,6 @@
             android:paddingTop="4.0dip"
             android:textSize="16.0sp" />
         <LinearLayout
-            android:id="@+id/send_layout"
             android:layout_width="56.0dip"
             android:layout_height="fill_parent"
             android:layout_gravity="left|center"

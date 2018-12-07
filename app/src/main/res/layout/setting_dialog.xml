@@ -121,7 +121,6 @@
         android:gravity="center"
         android:layout_height="50dp">
         <TextView
-            android:id="@+id/tv_setting_sure"
             android:text="确认"
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
