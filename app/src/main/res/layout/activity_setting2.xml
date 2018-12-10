@@ -31,11 +31,11 @@
         android:id="@+id/vp_card"
         android:layout_marginTop="@dimen/dimens_30"
         android:layout_width="match_parent"
-        android:layout_height="420dp">
+        android:layout_height="430dp">
     </android.support.v4.view.ViewPager>
     <RadioGroup
         android:id="@+id/rg_layout"
-        android:layout_marginTop="@dimen/dimens_10"
+        android:layout_marginTop="@dimen/dimens_12"
         android:paddingLeft="@dimen/dimens_10"
         android:paddingRight="@dimen/dimens_10"
         android:orientation="horizontal"
@@ -45,6 +45,24 @@
         android:layout_height="wrap_content">
         <RadioButton
             android:button="@null"
+            android:background="@drawable/selector_share_select"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+        <RadioButton
+            android:button="@null"
+            android:layout_marginLeft="@dimen/dimens_5"
+            android:background="@drawable/selector_share_select"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+        <RadioButton
+            android:button="@null"
+            android:layout_marginLeft="@dimen/dimens_5"
+            android:background="@drawable/selector_share_select"
+            android:layout_width="8dp"
+            android:layout_height="8dp" />
+        <RadioButton
+            android:button="@null"
+            android:layout_marginLeft="@dimen/dimens_5"
             android:background="@drawable/selector_share_select"
             android:layout_width="8dp"
             android:layout_height="8dp" />

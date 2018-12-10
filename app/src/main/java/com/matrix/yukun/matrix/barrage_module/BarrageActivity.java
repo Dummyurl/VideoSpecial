@@ -2,11 +2,14 @@ package com.matrix.yukun.matrix.barrage_module;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.os.PowerManager;
 import android.support.annotation.ColorInt;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
@@ -44,14 +47,24 @@ public class BarrageActivity extends BaseActivity implements View.OnClickListene
     private VerticalTextView mVerticalTextView;
     private int mBgColor=-1;
     private int mTextColor=-14575885;
+    private PowerManager.WakeLock mWakeLock;
 
     @Override
     public int getLayout() {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return R.layout.activity_barrage;
     }
 
     @Override
     public void initView() {
+        PowerManager powerManager = (PowerManager)getSystemService(POWER_SERVICE);
+
+        if (powerManager != null) {
+            mWakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "WakeLock");
+        }
+
         mRlBottonLayout = findViewById(R.id.rl_bottom_layout);
         mIvSetting = findViewById(R.id.iv_setting);
         mIvHistory = findViewById(R.id.iv_history);
@@ -69,6 +82,21 @@ public class BarrageActivity extends BaseActivity implements View.OnClickListene
         mIvHistory.setOnClickListener(this);
         mIvSetting.setOnClickListener(this);
         mRl_layout.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mWakeLock != null) {
+            mWakeLock.acquire();
+        }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mWakeLock != null) {
+            mWakeLock.release();
+        }
     }
 
     @Override

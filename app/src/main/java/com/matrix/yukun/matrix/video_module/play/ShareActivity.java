@@ -1,49 +1,34 @@
 package com.matrix.yukun.matrix.video_module.play;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.matrix.yukun.matrix.R;
 import com.matrix.yukun.matrix.bean.AppConstants;
-import com.matrix.yukun.matrix.util.FileUtil;
 import com.matrix.yukun.matrix.video_module.BaseActivity;
-import com.matrix.yukun.matrix.video_module.BaseFragment;
 import com.matrix.yukun.matrix.video_module.dialog.ShareDialog;
 import com.matrix.yukun.matrix.video_module.fragment.BaseCardFragment;
 import com.matrix.yukun.matrix.video_module.fragment.ShareCard1Fragment;
 import com.matrix.yukun.matrix.video_module.fragment.ShareCard2Fragment;
 import com.matrix.yukun.matrix.video_module.fragment.ShareCard3Fragment;
+import com.matrix.yukun.matrix.video_module.fragment.ShareCard4Fragment;
+import com.matrix.yukun.matrix.video_module.fragment.ShareCard5Fragment;
+import com.matrix.yukun.matrix.video_module.fragment.ShareCard6Fragment;
 import com.matrix.yukun.matrix.video_module.utils.ToastUtils;
-import com.mob.tools.gui.ViewPagerAdapter;
-
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ShareActivity extends BaseActivity implements View.OnClickListener {
 
 
     private ImageView mIvBack;
-    private ListView mListView;
-    private Handler mHandler=new Handler();
     private TextView mTvSave;
     private TextView mTvShare;
     private ViewPager mViewPager;
@@ -100,6 +85,9 @@ public class ShareActivity extends BaseActivity implements View.OnClickListener 
         mFragmentList.add(ShareCard1Fragment.getInstance());
         mFragmentList.add(ShareCard2Fragment.getInstance());
         mFragmentList.add(ShareCard3Fragment.getInstance());
+        mFragmentList.add(ShareCard4Fragment.getInstance());
+        mFragmentList.add(ShareCard5Fragment.getInstance());
+        mFragmentList.add(ShareCard6Fragment.getInstance());
         mShareViewPagerAdapter = new ShareViewPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mShareViewPagerAdapter);
     }
