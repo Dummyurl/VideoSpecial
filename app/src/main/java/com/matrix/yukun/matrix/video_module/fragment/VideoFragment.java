@@ -242,7 +242,7 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener 
                 .build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                ToastUtils.showToast("请求错误");
+//                ToastUtils.showToast("请求错误");
             }
 
             @Override
@@ -284,11 +284,13 @@ public class VideoFragment extends BaseFragment implements View.OnClickListener 
         }
     }
     public void getCurrentSelectViewPager(int position){
-        if(mLayoutVideo.getVisibility()!=View.GONE){
-            if(position==1){
-                updatePlayButton(false);
-            }else{
-                updatePlayButton(true);
+        if(mLayoutVideo!=null){
+            if(mLayoutVideo.getVisibility()!=View.GONE){
+                if(position==1){
+                    updatePlayButton(false);
+                }else{
+                    updatePlayButton(true);
+                }
             }
         }
     }

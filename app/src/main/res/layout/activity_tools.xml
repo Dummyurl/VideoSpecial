@@ -26,6 +26,16 @@
             android:padding="10dp"
             android:src="@mipmap/joke_back"
             android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_gravity="right"
+            android:layout_marginRight="@dimen/dimens_5"
+            android:padding="@dimen/dimens_10"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_share_color"
+            android:layout_width="@dimen/dimens_45"
+            android:layout_height="@dimen/dimens_45"/>
         <View
             android:layout_alignParentBottom="true"
             android:background="@color/color_line"

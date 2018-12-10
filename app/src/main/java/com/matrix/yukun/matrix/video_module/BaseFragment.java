@@ -26,4 +26,5 @@ public abstract class BaseFragment extends Fragment {
     public abstract int getLayout() ;
 
     public abstract void initView(View inflate,Bundle savedInstanceState);
+
 }

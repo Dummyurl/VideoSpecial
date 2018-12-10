@@ -149,7 +149,7 @@ public class ImageFragment extends BaseFragment {
                 .build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                Toast.makeText(getContext(), "请求错误", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "请求错误", Toast.LENGTH_SHORT).show();
             }
 
             @Override

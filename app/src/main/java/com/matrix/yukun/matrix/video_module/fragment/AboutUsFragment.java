@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -21,14 +22,13 @@ import com.matrix.yukun.matrix.gesture_module.GestureActivity;
 import com.matrix.yukun.matrix.setting_module.AgreeActivity;
 import com.matrix.yukun.matrix.setting_module.FankuiDialog;
 import com.matrix.yukun.matrix.setting_module.IntroduceActivity;
-import com.matrix.yukun.matrix.setting_module.SettingActivity;
 import com.matrix.yukun.matrix.video_module.BaseFragment;
 import com.matrix.yukun.matrix.video_module.dialog.ShareDialog;
 import com.matrix.yukun.matrix.video_module.play.ChatActivity;
-import com.matrix.yukun.matrix.video_module.play.SettingAboutActivity;
+import com.matrix.yukun.matrix.video_module.play.ShareActivity;
 import com.matrix.yukun.matrix.video_module.utils.ToastUtils;
 import com.matrix.yukun.matrix.video_module.views.NoScrolledListView;
-import com.tencent.bugly.beta.Beta;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -73,7 +73,6 @@ public class AboutUsFragment extends BaseFragment {
         mLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                List<Class> classes = new ArrayList<>();
                 Class aClass = null;
                 switch (position) {
                     case 0:
@@ -93,7 +92,10 @@ public class AboutUsFragment extends BaseFragment {
                         noteCommentDialog.show(getChildFragmentManager(), "NoteDetailActivity");
                         break;
                     case 5:
-                        Beta.checkUpgrade();
+                        Uri uri = Uri.parse(AppConstants.APP_STORE);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+//                        Beta.checkUpgrade();
                         break;
                     case 6:
                         ToastUtils.showToast("版本号：V"+getVersion());
@@ -109,7 +111,7 @@ public class AboutUsFragment extends BaseFragment {
         mIvSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), SettingAboutActivity.class);
+                Intent intent=new Intent(getContext(), ShareActivity.class);
                 startActivity(intent);
             }
         });

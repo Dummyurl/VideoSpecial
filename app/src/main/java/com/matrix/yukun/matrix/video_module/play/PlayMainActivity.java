@@ -24,6 +24,8 @@ import com.matrix.yukun.matrix.video_module.BaseActivity;
 import com.matrix.yukun.matrix.R;
 import com.matrix.yukun.matrix.R2;
 import com.matrix.yukun.matrix.video_module.fragment.ToolFragment;
+import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +55,7 @@ public class PlayMainActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        Beta.checkUpgrade();
         PlayFragment playFragment= PlayFragment.getInstance();
         mFragments.add(playFragment);
 //        MyCollectFragment myCollectFragment= MyCollectFragment.getInstance();

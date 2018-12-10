@@ -91,7 +91,7 @@ public class SplashActivity extends BaseActivity/* implements SplashADListener *
                     for (int result : grantResults) {
                         if(result!= PackageManager.PERMISSION_GRANTED){
                             AlertDialog dialog = new AlertDialog.Builder(this)
-                                    .setMessage("需要赋予访问存储的权限，不开启将无法正常工作！且可能被强制退出登录")
+                                    .setMessage("需要赋予权限，不开启将无法正常工作！且可能被强制退出登录")
                                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {

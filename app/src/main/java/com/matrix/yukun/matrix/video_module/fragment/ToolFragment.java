@@ -1,6 +1,7 @@
 package com.matrix.yukun.matrix.video_module.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import com.matrix.yukun.matrix.R;
 import com.matrix.yukun.matrix.selfview.guideview.Guide;
 import com.matrix.yukun.matrix.video_module.BaseFragment;
 import com.matrix.yukun.matrix.video_module.adapter.ToolsRVAdapter;
+import com.matrix.yukun.matrix.video_module.play.ShareActivity;
 import com.matrix.yukun.matrix.video_module.utils.SPUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +32,7 @@ import zhy.com.highlight.HighLight;
  * Created by Administrator on 2018/10/28.
  */
 
-public class ToolFragment extends BaseFragment {
+public class ToolFragment extends BaseFragment implements View.OnClickListener {
 
     private ImageView mIvBack;
     private RecyclerView mRvList;
@@ -42,6 +44,7 @@ public class ToolFragment extends BaseFragment {
     private HighLight mHightLight;
     private Guide guide;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private ImageView mIvShare;
 
     public static ToolFragment getInstance(){
         ToolFragment toolFragment=new ToolFragment();
@@ -56,6 +59,7 @@ public class ToolFragment extends BaseFragment {
     public void initView(View inflate, Bundle savedInstanceState) {
         mIvBack = (ImageView) inflate.findViewById(R.id.iv_back);
         mRvList = (RecyclerView)inflate. findViewById(R.id.rv_list);
+        mIvShare = inflate.findViewById(R.id.iv_share);
         mSwipeRefreshLayout = inflate.findViewById(R.id.sr);
         mTvTitle = inflate.findViewById(R.id.tv_title);
         mIvBack.setVisibility(View.GONE);
@@ -71,6 +75,7 @@ public class ToolFragment extends BaseFragment {
     }
 
     private void initListener() {
+        mIvShare.setOnClickListener(this);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -173,6 +178,15 @@ public class ToolFragment extends BaseFragment {
 //        guide = builder.createGuide();
 //        guide.setShouldCheckLocInWindow(true);
 //        guide.show(getActivity());
+    }
+
+    @Override
+    public void onClick(View v) {
+        int mId = v.getId();
+        if(mId ==R.id.iv_share){
+            Intent intent=new Intent(getContext(), ShareActivity.class);
+            startActivity(intent);
+        }
     }
 
     class ItemDragCallBack extends ItemTouchHelper.Callback {

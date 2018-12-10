@@ -58,11 +58,11 @@
             <ImageView
                 android:id="@+id/iv_setting"
                 android:layout_gravity="right"
-                android:padding="@dimen/dimens_8"
+                android:padding="@dimen/dimens_10"
                 android:layout_alignParentRight="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/dimens_10"
-                android:src="@mipmap/ic_settings_dark"
+                android:src="@mipmap/icon_share"
                 android:layout_width="@dimen/dimens_45"
                 android:layout_height="@dimen/dimens_45"/>
             <ImageView
@@ -72,7 +72,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/dimens_10"
-                android:src="@mipmap/icon_share"
+                android:src="@mipmap/icon_lianjie"
                 android:layout_marginRight="42dp"
                 android:layout_width="@dimen/dimens_45"
                 android:layout_height="@dimen/dimens_45"/>

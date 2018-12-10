@@ -226,7 +226,7 @@ public class RecFragment extends BaseFragment implements View.OnClickListener, E
                 .build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
-                Toast.makeText(getContext(), "请求错误", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "请求错误", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -267,11 +267,13 @@ public class RecFragment extends BaseFragment implements View.OnClickListener, E
         }
     }
     public void getCurrentSelectViewPager(int position){
-        if(mLayoutVideo.getVisibility()!=View.GONE){
-            if(position==0){
-                updatePlayButton(false);
-            }else{
-                updatePlayButton(true);
+        if(mLayoutVideo!=null){
+            if(mLayoutVideo.getVisibility()!=View.GONE){
+                if(position==0){
+                    updatePlayButton(false);
+                }else{
+                    updatePlayButton(true);
+                }
             }
         }
     }

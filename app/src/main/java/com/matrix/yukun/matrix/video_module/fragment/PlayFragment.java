@@ -26,6 +26,7 @@ import com.matrix.yukun.matrix.video_module.play.PlayMainActivity;
 import com.matrix.yukun.matrix.video_module.BaseFragment;
 import com.matrix.yukun.matrix.R;
 import com.matrix.yukun.matrix.R2;
+import com.matrix.yukun.matrix.video_module.play.ShareActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -84,6 +85,8 @@ public class PlayFragment extends BaseFragment {
     ImageView mIvChat;
     @BindView(R2.id.iv_collect)
     ImageView mIvCollect;
+    @BindView(R2.id.iv_share)
+    ImageView mIvShare;
     @BindView(R2.id.rl_collect)
     RelativeLayout mRlCollect;
     private MViewPagerAdapter mMViewPagerAdapter;
@@ -224,7 +227,7 @@ public class PlayFragment extends BaseFragment {
     }
 
     @OnClick({R2.id.iv_chat, R2.id.iv_setting, R2.id.iv_main, R2.id.head, R2.id.iv_close, R2.id.rl_collect, R2.id.rl_main,
-            R2.id.rl_movie, R2.id.rl_change_modul, R2.id.rl_me, R2.id.tv_close,R2.id.rl_bg_special})
+            R2.id.rl_movie, R2.id.rl_change_modul, R2.id.rl_me, R2.id.tv_close,R2.id.rl_bg_special,R2.id.iv_share})
     public void onClick(View view) {
         int i = view.getId();
         if (i == R.id.iv_main) {
@@ -280,7 +283,11 @@ public class PlayFragment extends BaseFragment {
         } else if (i == R.id.iv_setting) {
             SettingFragment settingFragment = SettingFragment.getInstance();
             settingFragment.show(getChildFragmentManager(), "");
-        } else if(i==R.id.rl_bg_special){
+        }else if(i == R.id.iv_share){
+            Intent intent=new Intent(getContext(), ShareActivity.class);
+            startActivity(intent);
+        }
+        else if(i==R.id.rl_bg_special){
             count++;
             if(count==3){
                 count=0;

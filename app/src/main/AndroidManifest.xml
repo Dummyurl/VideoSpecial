@@ -4,8 +4,8 @@
     package="com.matrix.yukun.matrix">
 
     <uses-sdk
-        android:minSdkVersion="18"
-        android:targetSdkVersion="25" />
+        android:minSdkVersion="19"
+        android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -32,7 +32,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
 
@@ -51,7 +50,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon, android:theme">
+        tools:replace="android:icon,android:label">
         <activity
             android:name=".main_module.SplashActivity"
             android:configChanges="keyboard|screenSize|orientation|layoutDirection"
@@ -231,7 +230,7 @@
             android:name=".qrcode_module.MyQRCodeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".video_module.play.SettingAboutActivity"
+            android:name=".video_module.play.ShareActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".dictionary_module.DictionaryActivity"
