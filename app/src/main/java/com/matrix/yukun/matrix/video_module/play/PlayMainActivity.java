@@ -18,12 +18,14 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.matrix.yukun.matrix.video_module.dialog.GestureDialog;
 import com.matrix.yukun.matrix.video_module.fragment.AboutUsFragment;
 import com.matrix.yukun.matrix.video_module.fragment.PlayFragment;
 import com.matrix.yukun.matrix.video_module.BaseActivity;
 import com.matrix.yukun.matrix.R;
 import com.matrix.yukun.matrix.R2;
 import com.matrix.yukun.matrix.video_module.fragment.ToolFragment;
+import com.matrix.yukun.matrix.video_module.utils.SPUtils;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 
@@ -71,6 +73,12 @@ public class PlayMainActivity extends BaseActivity {
         mBtColloct = (Button) findViewById(R.id.collect);
         ((RadioButton) (mRg.getChildAt(0))).setChecked(true);
         setListener();
+
+        boolean isFirst = SPUtils.getInstance().getBoolean("first");
+        if(!isFirst){
+            GestureDialog gestureDialog=GestureDialog.getInstance();
+            gestureDialog.show(getSupportFragmentManager(),"");
+        }
     }
 
     private void setListener() {

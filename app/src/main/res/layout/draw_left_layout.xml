@@ -12,13 +12,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="180dp">
-            <ImageView android:layout_width="25dp"
-                android:src="@mipmap/ic_logout"
+            <ImageView android:layout_width="@dimen/dimens_40"
+                android:src="@mipmap/icon_close_drawable"
                 android:id="@+id/iv_close"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
+                android:padding="@dimen/dimens_8"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="15dp"
                 android:layout_alignParentRight="true"
-                android:layout_height="25dp"/>
+                android:layout_height="@dimen/dimens_40"/>
         <de.hdodenhof.circleimageview.CircleImageView
             android:src="@mipmap/snail_image"
             android:layout_width="60dp"

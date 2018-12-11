@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.matrix.yukun.matrix.MyApp;
 import com.matrix.yukun.matrix.R;
+import com.matrix.yukun.matrix.gesture_module.GestureActivity;
 import com.matrix.yukun.matrix.selfview.GestureLockViewGroup;
 import com.matrix.yukun.matrix.video_module.play.PlayMainActivity;
 
@@ -63,13 +64,16 @@ public class LockActivity extends AppCompatActivity {
                     @Override
                     public void onGestureEvent(boolean matched) {
                             if(istrue(secretResult)){
-                                Intent intent=new Intent(LockActivity.this,MainActivity.class);
+                                Intent intent=new Intent(LockActivity.this,PlayMainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }else {
                                 secretResult="";
                                 if(inputTime==0){
-                                    MyApp.showToast("你可能忘记手势密码了");
+                                    MyApp.showToast("你可能忘记手势密码了,请选择重置手势密码。");
+                                    Intent intent=new Intent(LockActivity.this, GestureActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
                                 if(inputTime>0){
                                     MyApp.showToast("您还有"+inputTime+"次机会");
